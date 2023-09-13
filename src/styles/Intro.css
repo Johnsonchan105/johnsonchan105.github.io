@@ -1,0 +1,22 @@
+#intro {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 15%;
+    padding-top: 10%;
+    min-height: 50vh;
+}
+.intro-title {
+    font-family: "NTR", sans-serif;
+    font-size: 86px;
+    color: var(--white);
+}
+
+.intro-desc {
+    color: var(--slate);
+    font-family: "NTR", sans-serif;
+    font-size: 22px;
+    max-width: 40%;
+    text-align: justify;
+    padding-bottom: 0px;
+}
