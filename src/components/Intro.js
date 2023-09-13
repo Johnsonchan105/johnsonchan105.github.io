@@ -1,5 +1,6 @@
 import React from "react";
-
+import EmailRoundedIcon from '@mui/icons-material/EmailRounded';
+import DescriptionRoundedIcon from '@mui/icons-material/DescriptionRounded';
 import '../styles/Intro.css';
 import FadeInSection from "./FadeInSection";
 
@@ -32,6 +33,21 @@ class Intro extends React.Component {
                     enhancing the way people interact with technology, 
                     and everything in between.
                     </div>
+                    <a
+                        href="mailto:chenghchan@gmail.com"
+                        className="intro-button"
+                    >
+                        <EmailRoundedIcon></EmailRoundedIcon>
+                        {" " + "Contact Me!"}
+                    </a>
+                    <a
+                        href="https://drive.google.com/file/d/1OYOH-LgI89i5cpaaOWcLSKE8ddrBbeJZ/view?usp=sharing"
+                        className="intro-button"
+                        target={"_blank"}
+                    >
+                        <DescriptionRoundedIcon></DescriptionRoundedIcon>
+                        {" " + "Resume"}
+                    </a>
                 </FadeInSection>
             </div>
         );
