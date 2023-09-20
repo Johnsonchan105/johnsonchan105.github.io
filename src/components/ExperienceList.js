@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import { makeStyles } from '@material-ui/core/styles';
 import FadeInSection from "./FadeInSection";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
@@ -85,11 +84,36 @@ const ExperienceList = () => {
             <Tabs
                 value = {value}
                 onChange={handleChange}
+                variant={"scrollable"}
             >
                 {Object.keys(experienceItems).map((key, i) => (
                     <Tab label={key} {...a11yProps(i)} />
                 ))}
             </Tabs>
+            {Object.keys(experienceItems).map((key, i) => (
+                Object.keys(experienceItems[key]).map((role, j) => (
+                    <TabPanel value={value} index={i}>
+                        <span className="joblist-job-title">
+                            {role + " "}
+                        </span>
+                        <span className="joblist-job-company">
+                            {key}
+                        </span>
+                        <div className="joblist-duration">
+                            {experienceItems[key][role]["duration"]}
+                        </div>
+                        <ul className="job-description">
+                            {experienceItems[key][role]["desc"].map(function (descItem, k) {
+                                return (
+                                    <FadeInSection>
+                                        <li key={k}>{descItem}</li>
+                                    </FadeInSection>
+                                );
+                            })}
+                        </ul>
+                    </TabPanel>
+                ))
+            ))}
         </div>
     );
 }
