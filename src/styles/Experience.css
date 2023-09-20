@@ -4,10 +4,6 @@
     min-height: 60vh;
 }
 
-.experience-tab {
-  transition: height 0.5s;
-}
-
 .joblist-job-title {
   font-family: "NTR", sans-serif;
   font-size: 28px;
@@ -71,4 +67,12 @@ ul {
 
 .MuiTab-root {
   color: var(--slate) !important;
+}
+
+.tab-content-enter-active {
+  transition: height 0.3s ease-in-out;
+}
+
+.tab-content-exit-active {
+  transition: height 0.3s ease-in-out;
 }

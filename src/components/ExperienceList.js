@@ -5,6 +5,7 @@ import Tab from "@material-ui/core/Tab";
 import { Typography } from '@material-ui/core';
 import Box from '@material-ui/core/Box'
 import FadeInSection from './FadeInSection';
+import { CSSTransition } from 'react-transition-group';
 
 function TabPanel(props) {
     const {children, value, index, ...other}  = props;
@@ -38,14 +39,10 @@ function a11yProps(index) {
         'aria-controls': `simple-tabpanel-${index}`
     }
 }
-/*
-const useStyles = makeStyles(theme => ({
 
-}))
-*/
 const ExperienceList = () => {
-    //const classes = useStyles();
     const [value, setValue] = React.useState(0);
+    
 
     const experienceItems = {
         "YSTEM and Chess": {
@@ -80,7 +77,7 @@ const ExperienceList = () => {
     }
 
     return (
-        <div className="experience-tab">
+        <div>
             <Tabs
                 value = {value}
                 onChange={handleChange}
@@ -93,6 +90,12 @@ const ExperienceList = () => {
             {Object.keys(experienceItems).map((key, i) => (
                 Object.keys(experienceItems[key]).map((role, j) => (
                     <FadeInSection>
+                    <CSSTransition
+                        in={value === i}
+                        timeout={300}
+                        classNames="tab-content"
+                        unmountOnExit
+                    >
                             <TabPanel value={value} index={i}>
                                 <span className="joblist-job-title">
                                     {role + " "}
@@ -111,6 +114,7 @@ const ExperienceList = () => {
                                     })}
                                 </ul>
                             </TabPanel>
+                    </CSSTransition>
                     </FadeInSection>
                 ))
             ))}
