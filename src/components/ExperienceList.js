@@ -48,6 +48,15 @@ const ExperienceList = () => {
     const [value, setValue] = React.useState(0);
 
     const experienceItems = {
+        "YSTEM and Chess": {
+            "Jr. Software Engineering Intern @" : {
+                duration: "07/23 - PRESENT",
+                desc: [
+                    "Create new frontend features for a web application using Angular 9.",
+                    "Contribute to the improvement of backend functionalities by implementing additional endpoints using NodeJS Express and MongoDB."
+                ]
+            }
+        },
         "UCSB" : {
             "Undergraduate Learning Assistant @" : {
                 duration: "08/23 - PRESENT",
@@ -59,17 +68,8 @@ const ExperienceList = () => {
             "Undergraduate Research Assistant @" : {
                 duration: "09/22 - 06/23",
                 desc: [
-                    "Supervised the official website for Bionic Vision labs with React, MongoDB, and Javascript.",
-                    "Added 2 new pages displaying content and construct a Content Management System for convenient and effective editing."
-                ]
-            }
-        },
-        "YSTEM and Chess": {
-            "Jr. Software Engineering Intern @" : {
-                duration: "07/23 - PRESENT",
-                desc: [
-                    "Develop and enhance frontend features for a web application using Angular 9 (Typescript, HTML, CSS), while also contributing to backend functionalities using NodeJS Express and MongoDB.",
-                    "Engage in collaborative teamwork with a team of 8 engineers at Y STEM and Chess nonprofit to develop and implement software solutions."
+                    "Implemented a content management system with an authorization and verification system.",
+                    "Incorporated a consistent design strategy to provide low-vision users with a more accessible website experience"
                 ]
             }
         }
