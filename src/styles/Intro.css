@@ -34,3 +34,12 @@
     display: inline;
     position: relative;
 }
+
+a {
+    color: var(--bright-blue);
+}
+
+a:visited {
+    text-decoration: none;
+    color: var(--bright-blue);
+}
