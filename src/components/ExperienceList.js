@@ -45,7 +45,7 @@ const ExperienceList = () => {
     
 
     const experienceItems = {
-        "YSTEM and Chess": {
+        "Y STEM and Chess": {
             "Jr. Software Engineering Intern @" : {
                 duration: "07/23 - PRESENT",
                 desc: [
