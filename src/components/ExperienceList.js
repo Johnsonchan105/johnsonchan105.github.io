@@ -5,7 +5,7 @@ import FadeInSection from "./FadeInSection";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import { Typography } from '@material-ui/core';
-import { Box } from '@material-ui/core/Box';
+import Box from '@material-ui/core/Box'
 
 function TabPanel(props) {
     const {children, value, index, ...other}  = props;
@@ -27,11 +27,11 @@ function TabPanel(props) {
     )
 }
 
-TabPanel.PropTypes = {
+TabPanel.propTypes = {
     children: PropTypes.node,
     index: PropTypes.any.isRequired,
     value: PropTypes.any.isRequired
-}
+};
 
 function a11yProps(index) {
     return {
@@ -81,11 +81,10 @@ const ExperienceList = () => {
     }
 
     return (
-        <div className={classes.root}>
+        <div>
             <Tabs
                 value = {value}
                 onChange={handleChange}
-                className={classes.tabs}
             >
                 {Object.keys(experienceItems).map((key, i) => (
                     <Tab label={key} {...a11yProps(i)} />
