@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import FadeInSection from "./FadeInSection";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import { Typography } from '@material-ui/core';
 import Box from '@material-ui/core/Box'
+import FadeInSection from './FadeInSection';
 
 function TabPanel(props) {
     const {children, value, index, ...other}  = props;
@@ -80,11 +80,11 @@ const ExperienceList = () => {
     }
 
     return (
-        <div>
+        <div className="experience-tab">
             <Tabs
                 value = {value}
                 onChange={handleChange}
-                variant={"scrollable"}
+                variant={"standard"}
             >
                 {Object.keys(experienceItems).map((key, i) => (
                     <Tab label={key} {...a11yProps(i)} />
@@ -92,26 +92,26 @@ const ExperienceList = () => {
             </Tabs>
             {Object.keys(experienceItems).map((key, i) => (
                 Object.keys(experienceItems[key]).map((role, j) => (
-                    <TabPanel value={value} index={i}>
-                        <span className="joblist-job-title">
-                            {role + " "}
-                        </span>
-                        <span className="joblist-job-company">
-                            {key}
-                        </span>
-                        <div className="joblist-duration">
-                            {experienceItems[key][role]["duration"]}
-                        </div>
-                        <ul className="job-description">
-                            {experienceItems[key][role]["desc"].map(function (descItem, k) {
-                                return (
-                                    <FadeInSection>
-                                        <li key={k}>{descItem}</li>
-                                    </FadeInSection>
-                                );
-                            })}
-                        </ul>
-                    </TabPanel>
+                    <FadeInSection>
+                            <TabPanel value={value} index={i}>
+                                <span className="joblist-job-title">
+                                    {role + " "}
+                                </span>
+                                <span className="joblist-job-company">
+                                    {key}
+                                </span>
+                                <div className="joblist-duration">
+                                    {experienceItems[key][role]["duration"]}
+                                </div>
+                                <ul className="job-description">
+                                    {experienceItems[key][role]["desc"].map(function (descItem, k) {
+                                        return (
+                                            <li key={k}>{descItem}</li>
+                                        );
+                                    })}
+                                </ul>
+                            </TabPanel>
+                    </FadeInSection>
                 ))
             ))}
         </div>

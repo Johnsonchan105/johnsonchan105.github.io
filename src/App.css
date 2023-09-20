@@ -2,6 +2,7 @@
   background-color: var(--dark-navy);
   display: flex;
   flex-direction: row;
+  overflow: hidden;
 }
 
 html {
