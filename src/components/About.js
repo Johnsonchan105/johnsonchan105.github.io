@@ -20,7 +20,7 @@ class About extends React.Component {
     render(){
         const one = (
             <p>
-                My name is Cheng Han, but I go by Johnson! 
+                Hi! My name is Cheng Han, but I go by Johnson! 
                 I am currently undertaking a <b>Bachelor’s of Science</b> in 
                 <b> Computer Science</b> at the <a href="https://www.ucsb.edu/about">University of California, Santa Barbara</a> and will be complete the degree in June 2024. 
                 Currently I am also taking an internship at <a href="https://ystemandchess.com/about-us">Y STEM and Chess</a> while 
