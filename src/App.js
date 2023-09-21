@@ -4,6 +4,7 @@ import About from './components/About.js'
 import Experience from './components/Experience.js'
 import Projects from './components/Projects.js'
 import Footer from './components/Footer.js'
+import SideBarNav from './components/SideBarNav.js';
 import './App.css';
 import "./styles/Global.css";
 
@@ -16,6 +17,7 @@ function App() {
         <Experience></Experience>
         <Footer></Footer>
       </div>
+      <SideBarNav/>
     </div>
   );
 }
