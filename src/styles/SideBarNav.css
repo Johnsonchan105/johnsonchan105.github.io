@@ -67,6 +67,10 @@
     padding-bottom: 8px;
 }
 
+.sidebar-logos a {
+    padding-left: 10px;
+}
+
 .img {
     height: 18px;
 }
