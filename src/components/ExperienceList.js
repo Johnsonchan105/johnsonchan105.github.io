@@ -56,7 +56,7 @@ const ExperienceList = () => {
         },
         "UCSB" : {
             "Undergraduate Learning Assistant @" : {
-                duration: "08/23 - 09/23",
+                duration: "08/23 - PRESENT",
                 desc: [
                     "Facilitated a supportive learning environment for 75 students enrolled in Computer Science (CS9)",
                     "Leveraging strong communication and problem-solving skills to address inquiries, provide comprehensive assistance with homework, assignments, and effectively guide students towards achieving academic success."

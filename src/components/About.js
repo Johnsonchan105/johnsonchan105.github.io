@@ -22,8 +22,9 @@ class About extends React.Component {
             <p>
                 Hi! My name is Cheng Han, but I go by Johnson! 
                 I am currently undertaking a <b>Bachelor’s of Science</b> in 
-                <b> Computer Science</b> at the <a href="https://www.ucsb.edu/about">University of California, Santa Barbara</a> and will be complete the degree in June 2024. 
-                Currently I am also taking an internship at <a href="https://ystemandchess.com/about-us">Y STEM and Chess</a> as a <b>Jr Software Engineering Intern</b>.
+                <b> Computer Science</b> at the <a href="https://www.ucsb.edu/about">UCSB</a> and will be complete the degree in June 2024. 
+                Currently I am also taking an internship at <a href="https://ystemandchess.com/about-us">Y STEM and Chess</a> as a <b>Jr Software Engineering Intern</b> as well as
+                 performing as an <b>Undergraduate Learning Assistant</b> for the <a href="https://cs.ucsb.edu/education/undergraduate/learning-assistant-program">UCSB Computer Science Department</a>.
             </p>
         );
         const two = (
