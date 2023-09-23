@@ -19,19 +19,81 @@ class SideBarNav extends React.Component {
         };
         this.handleSelect = this.handleSelect.bind(this);
       }
+      /*
+      getActiveSection = () => {
+        const sections = ["intro", "about", "experience", "project]; // Add more sections as needed
+        let activeSection = "intro";
+
+        for (let i = 0; i < sections.length; i++) {
+            const section = sections[i];
+            const element = this.sections[section];
+
+            if (element) {
+                const rect = element.getBoundingClientRect();
+
+                if (rect.top <= 0 && rect.bottom >= window.innerHeight) {
+                    activeSection = section;
+                }
+            }
+        }
+        return activeSection;
+      };
+      */
+      handleScroll = () => {
+        const activeSection = this.getActiveSection();
+        console.log("Active Section:", activeSection);
+        if (activeSection !== this.state.activeSection) {
+            this.setState({ activeSection });
+        }
+      };
+      
+      componentDidMount() {
+        window.addEventListener("scroll", this.handleScroll);
+      };
+
+      componentWillUnmount() {
+        window.removeEventListener("scroll", this.handleScroll);
+      };
+
+      getActiveSection = () => {
+        const scrollY = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const sectionPositions = {
+          intro: document.getElementById("intro").offsetTop,
+          about: document.getElementById("about").offsetTop,
+          experience: document.getElementById("experience").offsetTop,
+          // Add more sections as needed
+        };
+      
+        let activeSection = "intro";
+        for (const section in sectionPositions) {
+          const sectionPosition = sectionPositions[section];
+          const sectionHeight = document.getElementById(section).offsetHeight;
+      
+          if (
+            scrollY >= sectionPosition - windowHeight / 2 && // Adjusted this line
+            scrollY < sectionPosition + sectionHeight - windowHeight / 2 // Adjusted this line
+          ) {
+            activeSection = section;
+          }
+        }
+        return activeSection;
+      };
+      
       handleSelect(eventKey) {
         this.setState({
           activeKey: eventKey
         });
-      }
+      };
       render () {
-        const { expanded } = this.state;
+        const { expanded, activeSection } = this.state;
 
         const links = [
-            <a href="#intro">home</a>,
-            <a href="#about">about</a>,
-            <a href="#experience">experience</a>,
-            //<a href="#projects">projects</a>
+            { id: "intro", text: "home" },
+            { id: "about", text: "about" },
+            { id: "experience", text: "experience" }/*,
+            { id: "projects", text: "projects" }
+            */
         ];
 
         return (
@@ -48,7 +110,12 @@ class SideBarNav extends React.Component {
                             <div className="sidebar-links">
                                 {links.map((link, i) => (
                                     <FadeInSection>
-                                        <div>{link}</div>
+                                        <a
+                                            href={`#${link.id}`}
+                                            className={activeSection === link.id ? "active-link" : ""}
+                                        >
+                                            {link.text}
+                                        </a>
                                     </FadeInSection>
                                 ))}
                             </div>
@@ -66,7 +133,7 @@ class SideBarNav extends React.Component {
                         <InstagramIcon style={{ fontSize: 22.5 }}></InstagramIcon>
                     </a>
                     <a href="https://www.facebook.com/johnsonchan105/">
-                        <FacebookIcon style={{ fontSize: 20 }}></FacebookIcon>
+                        <FacebookIcon style={{ fontSize: 22.5 }}></FacebookIcon>
                     </a>
                 </div>
             </div>
