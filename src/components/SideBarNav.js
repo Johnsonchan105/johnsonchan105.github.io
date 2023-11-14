@@ -19,29 +19,9 @@ class SideBarNav extends React.Component {
         };
         this.handleSelect = this.handleSelect.bind(this);
       }
-      /*
-      getActiveSection = () => {
-        const sections = ["intro", "about", "experience", "project]; // Add more sections as needed
-        let activeSection = "intro";
-
-        for (let i = 0; i < sections.length; i++) {
-            const section = sections[i];
-            const element = this.sections[section];
-
-            if (element) {
-                const rect = element.getBoundingClientRect();
-
-                if (rect.top <= 0 && rect.bottom >= window.innerHeight) {
-                    activeSection = section;
-                }
-            }
-        }
-        return activeSection;
-      };
-      */
+      
       handleScroll = () => {
         const activeSection = this.getActiveSection();
-        console.log("Active Section:", activeSection);
         if (activeSection !== this.state.activeSection) {
             this.setState({ activeSection });
         }
