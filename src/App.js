@@ -8,6 +8,7 @@ import SideBarNav from './components/SideBarNav.js';
 import './App.css';
 import "./styles/Global.css";
 import ReactGA from "react-ga4";
+
 ReactGA.initialize("G-XBL34ZF8NM");
 
 function App() {
