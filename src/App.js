@@ -10,11 +10,9 @@ import "./styles/Global.css";
 import ReactGA from "react-ga4";
 
 ReactGA.initialize("G-XBL34ZF8NM");
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 function App() {
-  useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  }, []);
   return (
     <div className='App'>
       <div id='content'>
