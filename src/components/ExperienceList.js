@@ -6,7 +6,6 @@ import { Typography } from '@material-ui/core';
 import Box from '@material-ui/core/Box'
 import FadeInSection from './FadeInSection';
 import { CSSTransition } from 'react-transition-group';
-
 function TabPanel(props) {
     const {children, value, index, ...other}  = props;
 
@@ -45,9 +44,18 @@ const ExperienceList = () => {
     
 
     const experienceItems = {
+        "Channel Islands National Marine Sanctuary": {
+            "Web Development and Data Visualization Intern @" : {
+                duration: "10/23 - PRESENT",
+                desc: [
+                    "Developed a customized WordPress as content management system using object orientated PHP.",
+                    "Leveraged WordPress and custom JavaScript to build a data visualization platform for National Marine Sanctuaries, displaying vital data encompassing over 663,000 square miles of protected aquatic habitats."
+                ]
+            }
+        },
         "Y STEM and Chess": {
             "Jr. Software Engineering Intern @" : {
-                duration: "07/23 - PRESENT",
+                duration: "07/23 - 10/23",
                 desc: [
                     "Create new frontend features for a web application using Angular 9.",
                     "Contribute to the improvement of backend functionalities by implementing additional endpoints using NodeJS Express and MongoDB."
@@ -58,7 +66,7 @@ const ExperienceList = () => {
             "Undergraduate Learning Assistant @" : {
                 duration: "08/23 - PRESENT",
                 desc: [
-                    "Facilitated a supportive learning environment for 75 students enrolled in Computer Science (CS9)",
+                    "Coordinated a supportive learning environment for 200+ students enrolled in Intermediate Python.",
                     "Leveraging strong communication and problem-solving skills to address inquiries, provide comprehensive assistance with homework, assignments, and effectively guide students towards achieving academic success."
                 ]
             },
@@ -77,7 +85,7 @@ const ExperienceList = () => {
     }
 
     return (
-        <div>
+        <div id = "experience-container">
             <Tabs
                 value = {value}
                 onChange={handleChange}
