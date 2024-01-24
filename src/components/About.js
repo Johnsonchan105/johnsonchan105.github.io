@@ -7,9 +7,27 @@ class About extends React.Component {
         super();
         this.state = {
             expanded: true,
-            activeKey: '1'
+            activeKey: '1',
+            currentIndex: 0,
         }
-        this.handleSelect = this.handleSelect.bind(this);
+        this.handleSelect = this.handleSelect.bind(this);   
+        this.updateImageIndex = this.updateImageIndex.bind(this);
+        this.handleImageClick = this.handleImageClick.bind(this);
+    }
+    componentDidMount() {
+        this.interval = setInterval(this.updateImageIndex, 3000);
+    }
+    componentWillUnmount() {
+        clearInterval(this.interval);
+    }
+    updateImageIndex() {
+        this.setState(prevState => ({
+            currentIndex: (prevState.currentIndex + 1) % 5
+        }));
+    }
+
+    handleImageClick() {
+        this.updateImageIndex();
     }
 
     handleSelect(eventKey){
@@ -22,30 +40,25 @@ class About extends React.Component {
             <p>
                 Hi! My name is Cheng Han, but I go by Johnson! 
                 I am currently undertaking a <b>Bachelor’s of Science</b> in 
-                <b> Computer Science</b> at the <a href="https://www.ucsb.edu/about">UCSB</a> and will be complete the degree in June 2024. 
-                Currently I am also taking an internship at <a href="https://ystemandchess.com/about-us">Y STEM and Chess</a> as a <b>Jr Software Engineering Intern</b> as well as
-                 performing as an <b>Undergraduate Learning Assistant</b> for the <a href="https://cs.ucsb.edu/education/undergraduate/learning-assistant-program">UCSB Computer Science Department</a>.
+                <b> Computer Science</b> at <a href="https://www.ucsb.edu/about">UCSB</a> and will be complete the degree in June 2024. 
+                Currently I am also taking an internship at <a href="https://channelislands.noaa.gov">Channel Islands National Marine Sanctuary</a> as a <b>Web Development and Data Visualization Intern</b>.
             </p>
         );
         const two = (
             <p>
-                Outside of work you’ll probably find me rock climbing, 
-                playing video games (Riot Games ily &lt;3), 
-                or obsessing over my latest hyperfixation.
+                Outside of work you’ll probably find me rock climbing, playing video games, or obsessing over my latest hyperfixation.
             </p>
         );
 
         const tech_stack = [
             'Python',
-            'Javascript',
-            'HTML & CSS',
-            'Node.js',
+            'AWS',
+            'Tensorflow',
+            'Maven',
             'React.js',
             'Angular.js',
             'Figma'
-        ];
-
-        const tech_items = tech_stack.map(stack => <li>{stack}</li>);
+        ];        
 
         return (
             <div id='about'>
@@ -68,8 +81,15 @@ class About extends React.Component {
                             </ul>
                             {[two]}
                         </div>
-                        <div className="about-me-img">
-                        </div>
+                        <FadeInSection>
+                            <div className="about-me-img">
+                                <div className="slideshow">
+                                    <div className="slide" onClick={this.handleImageClick}>
+                                        <img className="slide_img" src={`${process.env.PUBLIC_URL}/assets/carosel_pictures/carosel${this.state.currentIndex+1}.jpeg`} height={280} width={200} alt='profile pic'/>
+                                    </div>
+                                </div>
+                            </div>
+                        </FadeInSection>
                     </div>
                 </FadeInSection>
             </div>

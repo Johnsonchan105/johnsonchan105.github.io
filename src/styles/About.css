@@ -1,6 +1,6 @@
 #about {
     padding-left: 15%;
-    padding-right: 25%;
+    padding-right: 15%;
     min-height: 60vh;
 }
 
@@ -33,7 +33,7 @@
 .about-desc {
     font-family: "NTR", sans-serif;
     color: var(--slate);
-    max-width: 650px;
+    max-width: 750px;
     font-size: 20px;
     text-align: justify;
     margin: 0;
@@ -48,4 +48,27 @@
 .about-desc b {
     font-size: 20px;
     font-weight: bold;
+}
+
+.about-me-img{
+    margin-top: 70px;
+    padding-left: 20px;
+}
+
+.slideshow {
+    margin: 0 auto;
+    max-width: 200px;
+    white-space: nowrap;
+}
+  
+.slide {
+    display: inline-block;
+}
+
+.slide_img {
+    border-radius: 25px;
+}
+
+.slide_img:hover {
+    transform: translateY(-7px);
 }

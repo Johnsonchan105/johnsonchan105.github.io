@@ -4,11 +4,16 @@
     min-height: 60vh;
 }
 
+#experience-container {
+  width: 55vw;
+}
+
 .joblist-job-title {
   font-family: "NTR", sans-serif;
   font-size: 28px;
   font-weight: bold;
   color: var(--slate);
+  width: 100vw;
 }
 
 .joblist-job-company {

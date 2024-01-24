@@ -7,13 +7,13 @@ import Footer from './components/Footer.js'
 import SideBarNav from './components/SideBarNav.js';
 import './App.css';
 import "./styles/Global.css";
-import ReactGA from 'react-ga4';
-
-ReactGA.initialize("G-XBL34ZF8NM");
+import ReactGA from "react-ga4";
+ReactGA.initialize("G-5VBPVSS9CD");
+ReactGA.send("pageview");
 
 function App() {
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    ReactGA.send("pageview");
   }, []);
   return (
     <div className='App'>
