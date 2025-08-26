@@ -3,14 +3,14 @@ import '../styles/About.css';
 import FadeInSection from "./FadeInSection";
 
 class About extends React.Component {
-    constructor(){
+    constructor() {
         super();
         this.state = {
             expanded: true,
             activeKey: '1',
             currentIndex: 0,
         }
-        this.handleSelect = this.handleSelect.bind(this);   
+        this.handleSelect = this.handleSelect.bind(this);
         this.updateImageIndex = this.updateImageIndex.bind(this);
         this.handleImageClick = this.handleImageClick.bind(this);
     }
@@ -30,18 +30,17 @@ class About extends React.Component {
         this.updateImageIndex();
     }
 
-    handleSelect(eventKey){
+    handleSelect(eventKey) {
         this.setState({
             activeKey: eventKey
         });
     }
-    render(){
+    render() {
         const one = (
             <p>
-                Hi! My name is Cheng Han, but I go by Johnson! 
-                I am currently undertaking a <b>Bachelor’s of Science</b> in 
-                <b> Computer Science</b> at <a href="https://www.ucsb.edu/about">UCSB</a> and will be complete the degree in June 2024. 
-                Currently I am also taking an internship at <a href="https://channelislands.noaa.gov">Channel Islands National Marine Sanctuary</a> as a <b>Web Development and Data Visualization Intern</b>.
+                Hi! My name is Cheng Han, but I go by Johnson!
+                I am working as a <b>Software Engineer</b> at
+                <a href="https://www.appliedmaterials.com/us/en.html">Applied Materials</a> <a href="https://www.appliedmaterials.com/us/en/semiconductor/solutions-and-software/ai-x.html">AIx</a> since July 2024.
             </p>
         );
         const two = (
@@ -52,13 +51,13 @@ class About extends React.Component {
 
         const tech_stack = [
             'Python',
-            'AWS',
-            'Tensorflow',
-            'Maven',
+            'Redis',
+            'Clickhouse',
+            'Docker',
             'React.js',
-            'Angular.js',
-            'Figma'
-        ];        
+            'SQL',
+            'REST API'
+        ];
 
         return (
             <div id='about'>
@@ -71,7 +70,7 @@ class About extends React.Component {
                             {[one]}
                             {"I have been working with these technologies:"}
                             <ul className="tech-stack">
-                                {tech_stack.map(function (tech_items, i){
+                                {tech_stack.map(function (tech_items, i) {
                                     return (
                                         <FadeInSection>
                                             <li>{tech_items}</li>
@@ -85,7 +84,7 @@ class About extends React.Component {
                             <div className="about-me-img">
                                 <div className="slideshow">
                                     <div className="slide" onClick={this.handleImageClick}>
-                                        <img className="slide_img" src={`${process.env.PUBLIC_URL}/assets/carosel_pictures/carosel${this.state.currentIndex+1}.jpeg`} height={280} width={200} alt='profile pic'/>
+                                        <img className="slide_img" src={`${process.env.PUBLIC_URL}/assets/carosel_pictures/carosel${this.state.currentIndex + 1}.jpeg`} height={280} width={200} alt='profile pic' />
                                     </div>
                                 </div>
                             </div>
